@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <title>Rust Server</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: white; /* Text color on top of the background image */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      a {
+        color: white;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      input[type="submit"] {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      input[type="file"] {
+        margin-top: 10px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #008cba;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0077a4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>XDXDXDXD</h1>
+
+    <form action="burgerking" method="post">
+      <input type="submit" name="unchunked" value="cgi-unchunk" />
+    </form>
+    <form action="lol" method="post">
+      <input type="submit" name="chunked" value="cgi-chunked" />
+    </form>
+    <form action="/benis" method="post">
+      <input type="submit" value="dont preess" />
+    </form>
+
+    <form id="imageUploadForm">
+      <input type="file" id="image" name="image" />
+      <button type="submit">Upload an image</button>
+    </form>
+
+    <a href="/view_image">view uploaded image</a>
+
+    <img id="previewImage" style="max-width: 100%" />
+
+    <button id="deleteButton" onclick="deleteImage()">Delete Image</button>
+
+    <script>
+      document
+        .getElementById("imageUploadForm")
+        .addEventListener("submit", encodeImageFile);
+
+      function encodeImageFile(event) {
+        event.preventDefault();
+        let file = document.getElementById("image").files[0];
+        if (!file) return;
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = function () {
+          let base64Data = reader.result.split(",")[1];
+          fetch("/upload_image", {
+            method: "POST",
+            headers: {
+              "Content-Type": "text/plain",
+            },
+            body: base64Data,
+          })
+            .then((response) => {
+              if (!response.ok) {
+                console.log("response was not ok", response);
+                window.location.href = response.url;
+              } else {
+                console.log("success lol", response);
+              }
+              document.getElementById("previewImage").src = reader.result;
+            })
+            .then((data) => {
+              console.log("Success:", data);
+            });
+        };
+      }
+
+      function deleteImage() {
+        const deleteButton = document.getElementById("deleteButton");
+        deleteButton.disabled = true;
+
+        fetch("/delete_image", {
+          method: "DELETE",
+          credentials: "include",
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to delete image");
+            } else {
+              return response.text();
+            }
+            console.log("Image deleted successfully");
+            document.getElementById("previewImage").src = "";
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Failed to delete image.");
+          })
+          .finally(() => {
+            deleteButton.disabled = false;
+          });
+      }
+    </script>
+  </body>
+</html>

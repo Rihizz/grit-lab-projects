@@ -1,0 +1,64 @@
+{
+  "ports": [
+    {
+      "port": "0.0.0.0:7878",
+      "paths": {
+        "/": {
+          "allowed_methods": ["GET", "POST", "DELETE"],
+          "route": "src/content/",
+          "default_file": "index.html",
+          "directory_listing_mode": false,
+          "cgi_path": ""
+        },
+        "/burgerking": {
+          "allowed_methods": ["POST"],
+          "route": "src/cgi/burgerking.php",
+          "default_file": "",
+          "directory_listing_mode": false,
+          "cgi_path": "src/cgi/burgerking.php"
+        },
+        "/lol": {
+          "allowed_methods": ["POST"],
+          "route": "src/cgi/lol.php",
+          "default_file": "",
+          "directory_listing_mode": false,
+          "cgi_path": "src/cgi/lol.php"
+        },
+        "/delete_image": {
+          "allowed_methods": ["DELETE"],
+          "route": "",
+          "default_file": "",
+          "directory_listing_mode": false,
+          "cgi_path": ""
+        }
+      },
+      "error_page_path": "src/error-pages/",
+      "upload_limit": 1048576
+    },
+    {
+      "port": "0.0.0.0:7879",
+      "paths": {
+        "/": {
+          "allowed_methods": ["GET", "POST", "DELETE"],
+          "route": "src",
+          "default_file": "",
+          "directory_listing_mode": true,
+          "cgi_path": ""
+        },
+        "/src/cgi": {
+          "allowed_methods": ["GET", "POST", "DELETE"],
+          "route": "src/cgi",
+          "default_file": "",
+          "directory_listing_mode": true,
+          "cgi_path": ""
+        }
+      },
+
+      "error_page_path": "src/error-pages/",
+      "upload_limit": 1048576
+    }
+  ],
+  "page_path": "src/content",
+  "error_page_path": "src/error-pages/",
+  "timeout_duration": 0
+}
