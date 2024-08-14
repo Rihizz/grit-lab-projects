@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="pictures/Tulli.jpeg" />
+  <head>
+    <title>Escape From Customs</title>
+  </head>
+  <body>
+    <h1>Escape From Customs</h1>
+
+    <div id="background">
+      <div class="lives">Lives: 1</div>
+      <div class="time" id="timer">00:00</div>
+      <div class="score" id="counter">Score: 0</div>
+      <!-- topmid -->
+      <div class="wall" style="width: 50px; height: 150px; top: 50px"></div>
+      <!-- topborder -->
+      <div
+        class="wall"
+        style="width: 700px; height: 50px; top: 50px; left: 50px"
+      ></div>
+      <!-- abovelefttele -->
+      <div
+        class="wall"
+        style="width: 100px; height: 50px; top: 350px; left: 0px"
+      ></div>
+      <!-- belowlefttele -->
+      <div
+        class="wall"
+        style="width: 100px; height: 50px; top: 500px; left: 0px"
+      ></div>
+      <!-- aboverighttele -->
+      <div
+        class="wall"
+        style="width: 100px; height: 50px; top: 350px; left: 700px"
+      ></div>
+      <!-- belowrighttele -->
+      <div
+        class="wall"
+        style="width: 100px; height: 50px; top: 500px; left: 700px"
+      ></div>
+      <!-- lowrightwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 350px; top: 500px; left: 700px"
+      ></div>
+      <!-- toprightwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 350px; top: 50px; left: 700px"
+      ></div>
+      <!-- floorborder -->
+      <div
+        class="wall"
+        style="width: 700px; height: 50px; top: 800px; left: 50px"
+      ></div>
+      <!-- topleftwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 350px; top: 50px; left: 50px"
+      ></div>
+      <!-- lowleftwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 350px; top: 500px; left: 50px"
+      ></div>
+      <!-- topleftsmallwall -->
+      <div
+        class="wall"
+        style="width: 130px; height: 50px; top: 150px; left: 170px"
+      ></div>
+      <!-- toprightsmallwall -->
+      <div
+        class="wall"
+        style="width: 130px; height: 50px; top: 150px; left: 500px"
+      ></div>
+      <!-- toplefttallwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 200px; top: 200px; left: 170px"
+      ></div>
+      <!-- toprighttallwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 200px; top: 200px; left: 580px"
+      ></div>
+      <!-- topleftjailcorner -->
+      <div
+        class="jail"
+        style="width: 72px; height: 20px; top: 380px; left: 280px"
+      ></div>
+      <!-- jaildoor -->
+      <div
+        class="jailDoor"
+        style="width: 98px; height: 20px; top: 380px; left: 350px"
+      ></div>
+      <!-- toprightjailcorner -->
+      <div
+        class="jail"
+        style="width: 72px; height: 20px; top: 380px; left: 448px"
+      ></div>
+      <!-- leftjailwall -->
+      <div
+        class="jail"
+        style="width: 20px; height: 100px; top: 400px; left: 280px"
+      ></div>
+      <!-- rightjailwall -->
+      <div
+        class="jail"
+        style="width: 20px; height: 100px; top: 400px; left: 500px"
+      ></div>
+      <!-- jailfloor -->
+      <div
+        class="jail"
+        style="width: 240px; height: 20px; top: 500px; left: 280px"
+      ></div>
+      <!-- lowlefttallwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 200px; top: 500px; left: 170px"
+      ></div>
+      <!-- lowrighttallwall -->
+      <div
+        class="wall"
+        style="width: 50px; height: 200px; top: 500px; left: 580px"
+      ></div>
+      <!-- lowleftsmallwall -->
+      <div
+        class="wall"
+        style="width: 130px; height: 50px; top: 700px; left: 170px"
+      ></div>
+      <!-- lowrightsmallwall -->
+      <div
+        class="wall"
+        style="width: 130px; height: 50px; top: 700px; left: 500px"
+      ></div>
+      <!-- lowmid -->
+      <div class="wall" style="width: 50px; height: 100px; top: 700px"></div>
+      <!-- abovejail -->
+      <div
+        class="wall"
+        style="width: 200px; height: 50px; top: 255px; left: 300px"
+      ></div>
+
+      <!-- belowjail -->
+      <div
+        class="wall"
+        style="width: 200px; height: 50px; top: 600px; left: 300px"
+      ></div>
+      <div
+        class="teleport1"
+        style="height: 100px; width: 25px; left: 0px; top: 400px"
+      ></div>
+      <div
+        class="teleport2"
+        style="height: 100px; width: 25px; left: 775px; top: 400px"
+      ></div>
+    </div>
+  </body>
+  <script type="module">
+    import { createPacMan, createGhost, createSnus } from "./maze.js";
+    import { movePacMan, ghostMove } from "./movement.js";
+    createGhost();
+    createPacMan();
+    createSnus();
+    ghostMove(ghost);
+    movePacMan();
+  </script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORUM</title>
+        <link rel="stylesheet" href="../css/createposts.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--SCRIPTS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f9275dded9.js" crossorigin="anonymous"></script>
+        <style>
+            a{
+            color: #333;
+            font-weight: bolder;
+            text-decoration: none;
+            }
+
+            a:hover{
+            text-decoration: none;
+            color: #058a86
+            }
+            html{
+                background: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            
+            }
+            body {
+                background: none;
+            }
+            </style>
+    </head>
+    <body>
+        <header>
+            <div class="brand"><a class="branda" href="/"><i class="fa fa-diamond" aria-hidden="true"></i> Forum</a></div>
+       
+        
+
+         <!-- Sidenavigation bar -->
+         <div class="sidenavigation">
+
+
+            <div class="loginbtn">
+                
+                <i class="fa fa-sign-out" aria-hidden="true"></i> <a href="/logout/"> Logout</a>
+                <i class="fa fa-diamond" aria-hidden="true"></i> <a  href="/account/"> Account</a>
+             
+</div>
+
+             
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+        <a href="/">Home</a>
+        <a href="/account/">Account</a>
+        <a href="/createpost/">Create post</a>
+        </div>
+
+        <span style="font-size:30px;cursor:pointer" a href="#" class="bar-icon" id="iconBar" onclick="openNav()"><i class="fa fa-align-justify" aria-hidden="true"></i></i> </a></span>
+</div>  
+</header>
+
+
+
+<!-- end of nav -->
+
+  <body>
+    <div class="formcontainer">
+    <form class="postall" method="post" action="/postpost/">
+        <br>
+    <label for="title"><strong>Title</strong></label>
+        <br>
+        <input type="text" placeholder="Enter title" name="title" id="title" maxlength="35" required>
+        <br>
+    <label for="content"><strong>Content</strong></label>
+        <textarea name="content" id="content" placeholder="Enter content" maxlength="240" required></textarea>
+        {{ range .categories }}
+        <label for="category"><strong>{{ .Category }}</strong></label>
+        <input type="Checkbox" class="Cbtn" name="category" value="{{ .Category }}" id="category">
+        {{ end }}
+        <br>
+    <button type="submit" class="btn">POST</button>
+    {{ if .error }}
+    <h1>{{ .error }}</h1>
+    {{ end }}
+    <option value="category"></option>
+    </form>
+</div>
+  </body>
+
+
+
+
+<footer>
+    <span>&copy; &nbsp; Oskar, Santeri, Stefanie, Viktor & Wincent | All rights reserved. 2023</span>
+</footer>
+
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>

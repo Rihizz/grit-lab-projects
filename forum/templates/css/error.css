@@ -1,0 +1,27 @@
+.errorpage {
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 600px;
+}
+
+.msg {
+    font-size: 80px;
+    position: center;
+    margin: 20px;
+}
+
+
+
+.errorbtn {
+    margin: auto;
+    display: block;
+    background-color: #058a86;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 30px;
+    border-color: #058a86;
+    cursor: pointer;
+    
+}
+

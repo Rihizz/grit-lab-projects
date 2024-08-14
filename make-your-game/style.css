@@ -1,0 +1,141 @@
+h1 {
+  font-size: 50px;
+  color: rgb(0, 81, 255);
+  font-family: "Press Start 2P", cursive;
+}
+
+#background {
+  position: absolute;
+  width: 800px;
+  height: 900px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-image: url("pictures/terminal.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#pacMan {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 690px;
+  left: 400px;
+}
+#ghost {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.jail {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  top: 45%;
+  left: 45%;
+  border-radius: 0%;
+  background-color: rgb(26, 19, 124);
+}
+
+.jailDoor {
+  position: absolute;
+  width: 50px;
+  height: 10px;
+  top: 45%;
+  left: 45%;
+  border-radius: 0%;
+  background-color: rgb(247, 223, 40);
+}
+
+.wall {
+  position: absolute;
+  background-color: rgb(26, 19, 124);
+}
+
+.teleport1 {
+  position: absolute;
+  background-color: rgb(0, 206, 247);
+}
+.teleport2 {
+  position: absolute;
+  background-color: rgb(0, 206, 247);
+}
+
+.lives {
+  position: absolute;
+  top: 5;
+  left: 0;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.score {
+  position: justify;
+  top: 5;
+  left: 0;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+}
+
+#start-menu {
+  z-index: 1;
+  position: absolute;
+  left: 850px;
+}
+
+#game-over-menu {
+  z-index: 1;
+  position: absolute;
+  left: 850px;
+}
+
+#you-win-menu {
+  z-index: 1;
+  position: absolute;
+  left: 850px;
+}
+
+#pause-menu {
+  z-index: 1;
+  position: absolute;
+  left: 850px;
+  font-size: 26px;
+}
+
+#resume-button {
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(0, 81, 255);
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#restart-button {
+  top: 150px;
+  left: 50px;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(0, 81, 255);
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}

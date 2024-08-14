@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORUM</title>
+        <link rel="stylesheet" href="../css/detail.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--SCRIPTS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f9275dded9.js" crossorigin="anonymous"></script>
+        <style>
+          a{
+          color: #333;
+          font-weight: bolder;
+          text-decoration: none;
+          }
+
+          a:hover{
+          text-decoration: none;
+          color: #058a86
+          }
+          html{
+            background: linear-gradient(#80FFDB, #64DFDF, #48BFE3, #5390D9, #5E60CE) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            
+          } 
+          body {
+                background: none;
+            }
+          </style>
+    </head>
+    <body>
+        <header>
+        <div class="brand"><a class="branda" href="/"><i class="fa fa-diamond" aria-hidden="true"></i> Forum</a></div>
+        
+          <!--Navigation bar-->
+
+  
+
+                        <div id="login" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            
+                            <div class="modal-content">
+                              <div class="modal-body">
+                                <button data-dismiss="modal" class="close">&times;</button>
+                                <div class="register-container" id="container">
+                                    <div class="form-container sign-up-container">
+                                      <form action="/register/" method="post">
+                                        <h1 class="signin">Create Account</h1>
+                                        <label for="username"><strong>Username</strong></label>
+                                            <input
+                                            type="text"
+                                            placeholder="Enter Username"
+                                            name="username"
+                                            id="username"
+                                            required
+                                        />
+                                        <label for="email"><strong>Email</strong></label>
+                                            <input
+                                            type="text"
+                                            placeholder="Enter Email"
+                                            name="email"
+                                            id="email"
+                                            required
+                                        />
+                                        <label for="psw"><strong>Password</strong></label>
+                                            <input
+                                            type="password"
+                                            placeholder="Enter Password"
+                                            name="psw"
+                                            id="psw"
+                                            required
+                                        />
+                                        <br>
+                                    <button type="submit">Register</button>
+                                      </form>
+                                    </div>
+                                    <div class="form-container sign-in-container">
+                                      <form action="/login/" method="post">
+                                        <h1 class="signin">Sign in</h1>
+                                        <label for="username"><strong>Username</strong></label>
+                                        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+                                        <label for="psw"><strong>Password</strong></label>
+                                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                                       <br>
+                                        <button type="submit">Sign In</button>
+                                      </form>
+                                    </div>
+                                    <div class="overlay-container">
+                                      <div class="overlay">
+                                        <div class="overlay-panel overlay-left">
+                                          <h1 class="signin">Welcome Back!</h1>
+                                          <p class="signin-p">To keep connected with us please login with your personal info xd</p>
+                                          <button class="ghost" id="signIn">Sign In</button>
+                                        </div>
+                                        <div class="overlay-panel overlay-right">
+                                          <h1 class="signin">Hello, Friend!</h1>
+                                          <p class="signin-p">Enter your personal details and start journey with us xd</p>
+                                          <button class="ghost" id="signUp">Register</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    </div>
+                                   
+                            </div>
+                          </div>  
+                        </div>
+                    </div>
+                        
+                    </ul>
+                </nav>
+
+
+          <!-- Sidenavigation bar -->
+          
+          <div class="sidenavigation">
+
+                    <!-- Logout and account -->
+                    <div class="loginbtn">
+                    {{ if .user.Username }}
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> <a href="/logout/"> Logout</a>
+                    <i class="fa fa-diamond" aria-hidden="true"></i> <a  href="/account/"> Account</a>
+                 
+                    {{ else }}
+                 
+                   <!-- Login -->
+                  <a href="#" data-target="#login" data-toggle="modal">
+                  <a href="#" data-target="#login" data-toggle="modal"><i class="fa fa-sign-in" aria-hidden="true"></i></i> Login</a>
+                
+
+                  <!-- Register -->
+              
+                    <a href="#" data-target="#login" data-toggle="modal"><i class="fa fa-user-o" aria-hidden="true"></i></i> Register</a>
+                {{ end }}
+                  </div>
+
+
+               
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+                <a href="/">Home</a>
+                {{ if .user.UserID }}
+                <a href="/account/">Account</a>
+                <a href="/createpost/">Create post</a>
+                {{ end }}
+                </div>
+
+                <span style="font-size:30px;cursor:pointer" a href="#" class="bar-icon" id="iconBar" onclick="openNav()"><i class="fa fa-align-justify" aria-hidden="true"></i></i> </a></span>
+
+                <!-- end of nav-->
+               
+            
+       
+         
+        </header>
+
+        
+        <div class="containter">
+
+            <!--Navigation-->
+            {{ range $k, $v := .posts }}
+           
+            <div class="topic-container">
+                <div class="head">
+                    <div class="authors">{{ $v.Author }}</div>
+                    <div class="content">Topic: {{ $v.Title }}
+                        Category: {{ $v.Category }}
+                    </div>
+                </div>
+
+                <div class="body">
+                    <div class="authors">
+                        <div class="username"><a href="#">{{ $v.Author }}</a></div>
+                        <img src="https://helios-i.mashable.com/imagery/articles/04i1KeWXNed98aQakEZjeOs/hero-image.fill.size_1200x1200.v1623362896.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        {{ $v.Content }}
+                        <p>Likes: {{ $v.Likes }}</p>
+                        <p>Dislikes: {{ $v.Dislikes }}</p>
+                    </div>
+                </div>       
+                {{ else }}
+                <p>No post found</p>
+                {{ end }}
+            </div>
+            {{ if .user.UserID }}
+            <form class="likeform" action="/reactionhandler/">
+              <button type="submit" class="like-btn" name="reaction" value="like0"><i class="fa fa-thumbs-up"></i> LIKE</button>
+              <button type="submit"class="dislike-btn" name="reaction" value="dislike0"><i class="fa fa-thumbs-down"></i> DISLIKE</button>
+            </form> 
+            {{ end }}
+            
+
+            <!--Comment input-->
+            {{ if .user.UserID }}
+            <div class="comment-area" id="comment-area">
+                <form class="comentform" action="/postcomment/" method="post">
+                <textarea name="comment" id="comment" placeholder="comment here..." maxlength="150" minlength="2" required></textarea>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            {{ end }}
+
+            {{ if .error }}
+            <p>{{ .error }}</p>
+            {{ end }}
+
+            <!--Show comments-->
+            <div class="head">
+              
+              <div class="content">Comments</div>
+          </div>
+            {{ if .comments }}
+            {{ $everything := .}}
+            {{ range $k, $v := .comments }}
+            <!-- <div class="comment-container">
+                <div class="head">
+                    <div class="authors">{{ $v.Author }}</div>
+                    <div class="content">Comments</div>
+                </div> -->
+          
+                <div class="body">
+                    <div class="authors">
+                        <div class="anotherUser"><a href="#">{{ $v.Author }}</a></div>
+                        <img src="https://helios-i.mashable.com/imagery/articles/04i1KeWXNed98aQakEZjeOs/hero-image.fill.size_1200x1200.v1623362896.jpg" alt="">
+                        
+                    </div>
+          
+                    <div class="content">
+                        {{ $v.Content | html }}
+                        <p>Likes: {{ $v.Likes }}</p>
+                        <p> Dislikes: {{ $v.Dislikes }}</p>
+                    </div>
+                </div>       
+                {{ if $everything.user.Username }}
+                <form class="likeform" action="/reactionhandler/">
+                  <button type="submit" class="like-btn" name="reaction" value="like{{ $k }}"><i class="fa fa-thumbs-up"></i> LIKE</button>
+                  <button type="submit"class="dislike-btn" name="reaction" value="dislike{{ $k }}"><i class="fa fa-thumbs-down"></i> DISLIKE</button>
+                </form>
+                {{ end }}
+              </div>
+              {{ end }}
+              {{ end }}
+          
+
+<footer>
+    <span>&copy; &nbsp; Oskar, Santeri, Stefanie, Viktor & Wincent | All rights reserved. 2023</span>
+</footer>
+
+
+<script src="../js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real time Forum</title>
+    <link rel="stylesheet" type="text/css" href="/templates/css/style2.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script src="/templates/js/register.js"></script>
+    <script src="/templates/js/script.js"></script>
+    {{ if .session }}
+    <script src="/templates/js/chat.js"></script>
+    <script src="/templates/js/xd.js"></script>
+    <!-- <script src="/templates/js/cooments.js"></script> -->
+    <script src="/templates/js/posts.js"></script>
+    {{ end }}
+  </head>
+  <header>
+    <div class="topnav">
+      <a href="/"><i class="material-icons">home</i>Home</a>
+      {{ if .session }}
+
+      <a href="#" id="createBtn" class="split"
+        ><i class="material-icons">create</i>Create post</a
+      >
+      <a href="/logout" class="split"
+        ><i class="material-icons">mood_bad</i>Logout</a
+      >
+      {{ else }}
+
+      <a href="#" id="loginBtn" class="split">
+        <i class="material-icons">mood</i>Login</a
+      >
+      <a href="#" id="registerBtn" class="split"
+        ><i class="material-icons">person</i>Register</a
+      >
+      {{ end }}
+    </div>
+  </header>
+  <body>
+    {{ if .session }} {{ else}}
+    <form id="loginForm" action="/login" method="post">
+      <h2>Login</h2>
+      <label for="username">Username/Email</label>
+      <input
+        autocomplete="username"
+        type="text"
+        id="loginUsername"
+        name="username"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        autocomplete="current-password"
+        type="password"
+        id="loginPassword"
+        name="password"
+        required
+      />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <form id="registerForm" action="/register" method="post">
+      <h2>Register</h2>
+
+      <label for="username">Username</label>
+      <input
+        autocomplete="username"
+        type="text"
+        id="username"
+        name="username"
+        maxlength="10"
+        required
+      />
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Please select--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password</label>
+      <input
+        autocomplete="new-password"
+        type="password"
+        id="password"
+        name="password"
+        required
+      />
+
+      <button type="submit">Register</button>
+    </form>
+    {{ end }} {{ if .session }}
+    <form id="createForm" action="/createPost" method="post">
+      <h2>Create post</h2>
+
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" maxlength="35" required />
+
+      <label for="content">Content</label>
+      <textarea id="content" name="content" maxlength="240" required></textarea>
+
+      <label for="category">Category</label>
+      <input
+        type="text"
+        id="category"
+        name="category"
+        maxlength="10"
+        required
+      />
+
+      <button type="submit">Create</button>
+    </form>
+
+    <div class="container">
+      <div class="users"></div>
+      <div class="post-container" style="margin-top: 60px"></div>
+    </div>
+    {{ else }}
+    <div id="error-message" style="color: red; margin-top: 60px">
+      {{ if .error }} {{ .error }} {{ end }}
+    </div>
+    <div class="login-msg-container">
+      <h1 class="login-msg">
+        PLEASE LOGIN OR REGISTER TO USE THE NEW AND UPGRADED FORUM!!!
+      </h1>
+    </div>
+    {{ end }}
+  </body>
+</html>
