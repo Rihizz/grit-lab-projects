@@ -1,0 +1,53 @@
+.event-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #eaebed;
+    word-break: break-word;
+    position: relative; /* Add position property */
+    z-index: 1;
+    box-shadow: #000000 0px 0px 5px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+}
+
+.event-submitt-button {
+    width: 150px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 7px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #75e2ff;
+    color: #2e424d;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: #4752a4 0px 0px 2px;
+    transform: translateY(0px, -5px);
+}
+
+.event-going-radio-button {
+    height: 15px;
+    background-color: #eee;
+    margin-right: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+

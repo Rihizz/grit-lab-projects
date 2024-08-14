@@ -1,0 +1,354 @@
+.login-message {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.login-message p {
+  font-size: 24px;
+  color: #eaebed;
+}
+
+/* contains all post and the post box */
+.post-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #eaebed;
+  word-break: break-word;
+  position: relative; /* Add position property */
+  z-index: 1; /* Add z-index property */
+}
+
+/* user made post  */
+.post {
+  padding: 10px 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: #000000 0px 0px 5px;
+  transform: translateY(0px, -5px);
+}
+
+.post:hover {
+  box-shadow: #000000 0px 0px 10px;
+  transform: translateY(0px, -10px);
+}
+
+.poster {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  height: auto;
+}
+
+.post-date {
+  font-size: 14px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.opencomments {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* basically the same as post-container but only ability is to scroll the page  */
+.allposts {
+  overflow-y: scroll;
+  max-height: 820px;
+}
+
+/* posts image if there is one  */
+.post-img {
+  width: 400px;
+  max-height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* the text box that user writes in  */
+.post-box {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 90%;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  /* removed maxheight and width cause it was fucking the postbox */
+  resize: none;
+  border: 2px solid #000000;
+  border-radius: 5px;
+}
+
+/* what is this? */
+/* .post-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 150px;
+  width: 80%;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  max-width: 50vh;
+  max-height: 30vh;
+} */
+
+/* the button that determines how you want to post it */
+#privacy {
+  width: 100px;
+  height: 25px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #75e2ff;
+  color: #2e424d;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: #4752a4 0px 0px 2px;
+  transform: translateY(0px, -5px);
+}
+
+#privacy:hover {
+  box-shadow: #000000 0px 0px 5px;
+  transform: translateY(0px, -5px);
+}
+
+/* the text infront of choose file button */
+/* #upload {
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+/* choose file button */
+#picture {
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#friends-dropdown {
+  max-width: 400px;
+  max-height: 24px; /* Adjust the height as per your requirements */
+  min-height: 70px;
+  margin-left: 12px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #75e2ff;
+  cursor: pointer;
+  box-shadow: #4752a4 0px 0px 2px;
+  transform: translateY(0px, -5px);
+  vertical-align: middle; /* Add this line */
+  line-height: 10px; /* Add this line to vertically align the text */
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 0px 15px;
+  z-index: 9999;
+}
+
+#friends-dropdown:hover {
+  box-shadow: #000000 0px 0px 5px;
+  transform: translateY(0px, -5px);
+}
+
+/* the box for everything needed to post a post */
+.posting-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 5px;
+  word-break: break-word;
+  position: relative; /* Add position property */
+}
+
+.file-input {
+  display: none;
+}
+
+#file-name {
+  margin-left: 20px;
+}
+
+/* button for submitting post */
+.submit-post {
+  width: 100px;
+  height: 25px;
+  margin-left: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #75e2ff;
+  color: #2e424d;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: #4752a4 0px 0px 2px;
+  transform: translateY(0px, -5px);
+  vertical-align: middle; /* Add this line */
+  margin-bottom: 4px;
+}
+
+.welcome {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+ }
+
+.submit-post:hover {
+  box-shadow: #000000 0px 0px 5px;
+  transform: translateY(0px, -5px);
+}
+
+/* the whole page only reason is to keep the post-container bit to the left  */
+/* ???xdddddddd */
+/* .social-network-header {
+  margin-left: 10px;
+} */
+
+/* user boxes title */
+.user-list-header {
+  color: #eaebed;
+  margin-left: 1px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* contains all the users atm  */
+.user-list-container {
+  position: fixed;
+  top: 98px;
+  left: 5px;
+  width: 200px;
+
+  overflow-y: scroll;
+  max-height: 210px;
+  z-index: 9999;
+}
+
+/* just the user inside the user list container   */
+.user-list-item {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #eaebed;
+  box-shadow: #000000 0px 0px 5px;
+  transform: translateY(0px, -5px);
+  z-index: 9999;
+}
+
+.user-list-item:hover {
+  box-shadow: #000000 0px 0px 10px;
+  transform: translateY(0px, -5px);
+}
+
+/* users name */
+.user-list-item a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* thumbs up no more XDDDD */
+/* .fa {
+  display: flex;
+  margin-top: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  color: #2e424d;
+}
+.fa:hover {
+  color: #1a6d36;
+}
+.fa.liked {
+  color: #0c812b;
+} */
+
+@media screen and (max-width: 1400px) {
+  .user-list-container {
+    position: static;
+    margin-left: 20px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .post-container {
+    max-width: calc(100% - 40px); /* Subtract the margin on both sides */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* Add position property */
+  }
+  .post-box {
+    background-color: #eaebed;
+    margin-left: 0px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  #privacy {
+    margin-left: 0px;
+    width: 100px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .allposts {
+    overflow-y: scroll;
+    max-height: 720px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .post-img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .user-list-container {
+    position: static;
+    margin-left: 20px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .post-container {
+    width: 600px;
+  }
+  .post-box {
+    background-color: #eaebed;
+    margin-left: 0px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  #privacy {
+    margin-left: 0px;
+    width: 100px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bomberman</title>
+    <style>
+      /* Reset some default styles */
+      body,
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Center the content */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      /* Container for the starting screen */
+      .container {
+        text-align: center;
+        position: relative;
+        width: 700px; /* Adjust the width as needed */
+        height: 400px; /* Adjust the height as needed */
+        background-image: url("/frontend/images/grass.png"); /* Background color of the rectangle */
+        background-size: 25px 25px; /* Size each block as 50x50 pixels */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Border image */
+      .rectangle {
+        position: absolute;
+        top: -50px; /* Adjust the top offset to position the rectangle border on top */
+        left: 50%;
+        transform: translateX(-50%); /* Center the rectangle horizontally */
+        /* Adjust the left offset to match the border width */
+        width: 800px; /* Adjust the width based on container size and border width */
+        height: 500px; /* Adjust the height based on container size and border width */
+        background-image: url("/frontend/images/brick1.png"); /* Updated path to the border image */
+        background-size: 50px 50px; /* Size each block as 50x50 pixels */
+        z-index: -1; /* Set a lower z-index to position the rectangle behind the container */
+      }
+
+      /* Heading style */
+      h1 {
+        font-size: 48px;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      /* Button style */
+      .start-button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .start-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="rectangle"></div>
+      <!-- Add the rectangle border -->
+      <h1>Bomberman</h1>
+      <div>
+        <h2>ENTER YOUR NAME</h2>
+        <button class="start-button">Start Game</button>
+      </div>
+      <div>
+        <h2>Controls</h2>
+        <p>Arrow or WASD keys to move, Spacebar to place bomb</p>
+      </div>
+    </div>
+  </body>
+</html>

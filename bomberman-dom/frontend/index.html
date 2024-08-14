@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/static/css/style.css" rel="stylesheet" />
+    <title>Booberman</title>
+  </head>
+  <body>
+    <h1>BOMBERMAN</h1>
+    <div id="welcome-message"></div>
+    <div id="game-board"></div>
+    <script type="module" src="/static/js/index.js"></script>
+    <div id="hud-container">
+      <div id="hud">
+        <div id="player-${player.PlayerID}-png" class="player-info">
+          <img
+            src="/static/images/playerHead1.png"
+            alt="player1"
+            class="player-image"
+          />
+
+          <div class="player-name" id="player1-name">Player 1</div>
+          <div id="player1-lives" class="player-lives">
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+          </div>
+        </div>
+        <div id="player2" class="player-info">
+          <img
+            src="/static/images/playerHead2.png"
+            alt="player1"
+            class="player-image"
+          />
+          <div class="player-name" id="player2-name">Player 2</div>
+          <div id="player2-lives" class="player-lives">
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+          </div>
+        </div>
+        <div id="player3" class="player-info">
+          <img
+            src="/static/images/playerHead3.png"
+            alt="player1"
+            class="player-image"
+          />
+
+          <div class="player-name" id="player3-name">Player 3</div>
+          <div id="player3-lives" class="player-lives">
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+          </div>
+        </div>
+        <div id="player4" class="player-info">
+          <img
+            src="/static/images/playerHead4.png"
+            alt="player1"
+            class="player-image"
+          />
+
+          <div class="player-name" id="player4-name">Player 4</div>
+          <div id="player4-lives" class="player-lives">
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+            <img src="/static/images/heart.png" alt="heart" class="heart" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

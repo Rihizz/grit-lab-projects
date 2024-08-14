@@ -1,0 +1,19 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.errorType{
+    font-size: 10rem;
+    font-weight: 700;
+    color: #f44336;
+}
+
+.errorMessage{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f44336;
+}

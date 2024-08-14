@@ -1,0 +1,388 @@
+html {
+  background-color: #244d61;
+}
+
+/* Site styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #555;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* h1 {
+  font-size: 36px;
+} */
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 24px;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.about-page {
+  margin: 20px;
+}
+
+.App {
+  text-align: center;
+  color: white;
+  background-color: #2e424d;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background-color: #f2eded;
+  box-shadow: #000000 0px 0px 5px;
+  transform: translateY(0px, -5px);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+/* .navbar li:not(:last-child) {
+  margin-right: 10px;
+} */
+
+.topnav {
+  margin-left: 20px;
+}
+
+.bottomnav {
+  margin-right: 20px;
+}
+
+.about,
+.groups,
+.profile,
+.logout-button,
+.login-nav {
+  margin-left: 20px;
+}
+
+/* topnav icons */
+.home i,
+.about i,
+.groups i,
+.profile i,
+.searchbar i,
+.logout-button i,
+.login-nav i {
+  margin-right: 4px;
+}
+
+/* logouybutton */
+.bals {
+  cursor: pointer;
+}
+/* the magnifying glass */
+.searchbark {
+  cursor: pointer;
+}
+
+.searchbar {
+  position: static;
+  display: flex;
+  z-index: 9999;
+  margin: 0 auto;
+}
+
+.search-input {
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  background-color: #f2eded;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  height: 20px;
+}
+
+.search-input.visible {
+  opacity: 1;
+  width: 300px;
+}
+
+#search-results {
+  position: absolute;
+  z-index: 9999;
+  background-color: #f2edede4;
+  width: 352px;
+  border-radius: 5px;
+}
+
+.result {
+  display: none;
+}
+
+.result.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999;
+  background-color: #f2edede4;
+  border-radius: 5px;
+}
+
+.chat-button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.chat-button i {
+  font-size: 20px;
+  color: white;
+}
+
+.notificationsXD {
+  cursor: pointer;
+  position: static;
+  right: 0;
+  /* dont add margins  */
+  z-index: 9999;
+}
+
+.notifications-list {
+  height: 200px;
+  position: absolute;
+  z-index: 1;
+  flex-direction: column;
+  background-color: #f2edede4;
+  width: 260px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  padding-inline-start: 0;
+  right: 0;
+  margin-right: 20px;
+  word-break: break-word;
+}
+/* inside the notification accept and decline */
+.notifications i {
+  margin-right: 4px;
+}
+
+/* .notifications-list li:last-child {
+  margin-right: 10px;
+} */
+
+.acceptdecline {
+  display: flex;
+  align-items: center;
+}
+
+.notifications-list li {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.acceptfollower {
+  color: #088f33;
+}
+
+.acceptfollower:hover {
+  color: #2cba59;
+}
+
+.declinefollower {
+  color: #d20909;
+}
+
+.declinefollower:hover {
+  color: #ff0000;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.icon-button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 910px) {
+  .navbar {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2eded;
+    box-shadow: #000000 0px 0px 5px;
+    transform: translateY(0px, -5px);
+    padding-bottom: 10px;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  .topnav {
+    margin-left: 0px;
+  }
+
+  .bottomnav {
+    margin-top: 0;
+  }
+
+  .about,
+  .groups,
+  .profile,
+  .logout-button,
+  .login-nav {
+    margin-left: 8px;
+  }
+
+  .searchbark {
+    /* Change from "static" to "relative" */
+    cursor: pointer;
+  }
+
+  .search-input {
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    background-color: #f2eded;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    height: 20px;
+    position: absolute; /* Add "position: absolute" */
+    top: 10.5%; /* Position it below the searchbark */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+    width: 0; /* Start with 0 width */
+    z-index: 9999;
+  }
+
+  .search-input.visible {
+    opacity: 1;
+    width: 300px;
+    z-index: 9999;
+  }
+
+  #search-results {
+    width: 300px;
+    margin: 0 auto; /* Center the element horizontally */
+    left: 50%; /* Adjust the left position */
+    transform: translateX(-50%); /* Center it horizontally */
+    top: 13%; /* Position it below the notificationsXD */
+
+    z-index: 9999;
+  }
+
+  .result {
+    display: none;
+  }
+
+  .result.visible {
+    z-index: 9999;
+    background-color: #f2edede4;
+    border-radius: 5px;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .notificationsXD {
+    cursor: pointer;
+    position: static;
+    z-index: 1;
+
+    /* dont add margins  */
+  }
+
+  .notifications-list {
+    height: 150px;
+    width: 100%;
+
+    left: 0; /* Adjust left property instead of right */
+    right: 0;
+    top: 10.2%; /* Position it below the notificationsXD */
+    /* Add some space between notificationsXD and notifications-list */
+    z-index: 9999;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s linear infinite;
+}

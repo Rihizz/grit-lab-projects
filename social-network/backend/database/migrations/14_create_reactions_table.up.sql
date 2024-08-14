@@ -1,0 +1,6 @@
+CREATE TABLE reactions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    post_id INTEGER NOT NULL,
+    reaction_type INTEGER NOT NULL
+)

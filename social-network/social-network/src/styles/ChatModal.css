@@ -1,0 +1,117 @@
+Chatmodal.css
+
+.close-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 15px;
+  color: #403e3e;
+  cursor: pointer;
+}
+
+.chat-button {
+  width: 40px;
+  height: 30px;
+  padding: 3px;
+  margin-left: 10px;
+  margin-top: -3px;
+  background-color: #61dafb;
+  border-radius: 50px;
+}
+
+.chat-modal {
+  position: fixed;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #244d61;
+  height: 470px;
+  padding: 20px;
+  z-index: 9999;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  word-break: break-word;
+  overflow-y: scroll;
+}
+
+.chat-modal h2 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  color: #f2f2f2;
+  font-size: 25px;
+  
+}
+
+.chat-messages {
+  height: 300px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.chat-username, .message-author, .message-sender {
+  margin-top: 20px;
+  margin: 5px;
+  color: #757272;
+  font-size: 17px;
+  /* text-decoration: underline; */
+  background-color: #b8e1f6;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.chat-message-text, .message-text {
+  margin: 5px;
+  margin-left: 10px;
+  color: #484646;
+  font-size: 20px;
+}
+
+.chat-timestamp, .message-timestamp {
+  margin: 10px;
+  color: #757272;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.text-input {
+  width: 220px;
+  border-radius: 5px;
+  padding: px;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.send-button {
+  width: 60px;
+  height: 28px;
+  padding: 3px;
+  margin-top: 10px;
+  background-color: #61dafb;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.chat-modal img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover; 
+  margin-left: 10px;
+}
+
+.chat-image-preview {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  object-fit: cover;
+  background-color: #f2f2f2;
+}
